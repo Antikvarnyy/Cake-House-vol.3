@@ -29,7 +29,7 @@ namespace Cake_House_vol._3
         }
         private void Levitate(object sender, MouseEventArgs e)
         {
-            if (sender.ToString().Contains("About"))
+            if (sender.ToString().Contains("Back"))
             {
                 back.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FDF5D3"));
             }
@@ -41,7 +41,7 @@ namespace Cake_House_vol._3
 
         private void Leave(object sender, MouseEventArgs e)
         {
-            if (sender.ToString().Contains("About"))
+            if (sender.ToString().Contains("Back"))
             {
                 back.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E1BD77"));
             }
@@ -124,6 +124,8 @@ namespace Cake_House_vol._3
                                                 {
                                                     if (id_custom.ToString() == customid.ToString() && id_cake.ToString() == cakeid.ToString())
                                                     {
+                                                        if (Convert.ToInt32(count_basket) > Convert.ToInt32(count_cake))
+                                                            count_basket = Convert.ToInt32(count_cake);
                                                         int[] count = new int[Convert.ToInt32(count_cake)];
                                                         for (int i = 0; i < Convert.ToInt32(Convert.ToInt32(count_cake)); i++)
                                                         {
@@ -158,6 +160,7 @@ namespace Cake_House_vol._3
             }
             CakeList.ItemsSource = Cakes;
             Total.Content = "Total: " + total + "₴";
+                
         }
 
         private async void CountChange(object sender, SelectionChangedEventArgs e)
@@ -286,6 +289,17 @@ namespace Cake_House_vol._3
 
         private void exit(object sender, RoutedEventArgs e)
         {
+            Close();
+        }
+
+        private void Confirm(object sender, RoutedEventArgs e)
+        {
+            if (Total.Content.ToString() == "Total: 0₴")
+                return;
+            DeliveryPay deliveryPay = new DeliveryPay(Total.Content.ToString(), username.Content.ToString());
+            deliveryPay.Owner = this;
+            Hide();
+            deliveryPay.ShowDialog();
             Close();
         }
     }

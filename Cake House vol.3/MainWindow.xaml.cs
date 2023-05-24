@@ -147,7 +147,8 @@ namespace Cake_House_vol._3
                             if (f == 1)
                                 continue;
                         }
-
+                        if (Convert.ToInt32(count) < 1)
+                            continue;
                         if (Weight.SelectedIndex == 1 && Convert.ToInt32(weight) > 200)
                             continue;
                         if (Weight.SelectedIndex == 2 && (Convert.ToInt32(weight) < 200) || Convert.ToInt32(weight) > 999)
@@ -343,6 +344,15 @@ namespace Cake_House_vol._3
             basket.Name = username.Content.ToString();
             Hide();
             basket.ShowDialog();
+            Show();
+        }
+
+        private void GoReviews(object sender, RoutedEventArgs e)
+        {
+            Reviews rew = new Reviews(username.Content.ToString());
+            rew.Owner = this;
+            Hide();
+            rew.ShowDialog();
             Show();
         }
     }

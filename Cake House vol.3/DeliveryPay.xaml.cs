@@ -19,9 +19,13 @@ namespace Cake_House_vol._3
     /// </summary>
     public partial class DeliveryPay : Window
     {
-        public DeliveryPay()
+        string t = "";
+        string username = "";
+        public DeliveryPay(string total, string user)
         {
             InitializeComponent();
+            t = total;
+            username = user;
         }
 
         private void pay(object sender, RoutedEventArgs e)
@@ -31,10 +35,11 @@ namespace Cake_House_vol._3
                 MessageBox.Show("Enter your address for deliveryman!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            Check check = new Check(address.Text);
+            Check check = new Check(address.Text, t, username);
             check.Owner = this;
             Hide();
             check.ShowDialog();
+            Close();
         }
     }
 }

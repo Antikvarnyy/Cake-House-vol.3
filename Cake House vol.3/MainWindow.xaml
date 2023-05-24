@@ -53,7 +53,7 @@
         <Rectangle Fill="#473366" Width="1280" Height="60"></Rectangle>
         <StackPanel Orientation="Horizontal">
             <Button Name="about" Content="About us" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="90" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave"/>
-            <Button Name="reviews" Content="Our reviews" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="150" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave"/>
+            <Button Name="reviews" Content="Our reviews" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="150" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="GoReviews"/>
             <Button Name="order" Content="Order for a date" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="170" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave"/>
             <Label Content="Cake House" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="40" Width="auto" Height="60" Margin="110,0,0,0" />
             <StackPanel Orientation="Horizontal" Width="540" FlowDirection="RightToLeft">

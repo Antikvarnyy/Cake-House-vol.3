@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="Check" Height="450" Width="800"
         Background="#DECAFC">
+    <Window.Resources>
+        <DataTemplate x:Key="CakeTempalte">
+            <Border BorderBrush="#473366" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Width="500">
+                    <Image Width="75" Height="75"  Source="{Binding Path=picture1}"/>
+                    <Rectangle Height="75" Width="1" Fill="#473366"></Rectangle>
+                    <TextBlock TextWrapping="Wrap" Width="150px" Padding="5" FontFamily="Monotype Corsiva" FontSize="22" Text="{Binding Path=name1}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                    <Rectangle Height="75" Width="1" Fill="#473366"></Rectangle>
+                    <TextBlock Width="50" TextWrapping="Wrap" Padding="5" FontFamily="Monotype Corsiva" FontSize="22" Text="{Binding Path=price1}"  HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle Height="75" Width="1" Fill="#473366"></Rectangle>
+                    <ComboBox IsEnabled="False" SelectedIndex="{Binding Path=selection1}" Name="count" Margin="10" FontFamily="Monotype Corsiva" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Path=count1}"></ComboBox>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="test1">
+            <WrapPanel/>
+        </ItemsPanelTemplate>
+    </Window.Resources>
     <Grid>
         <StackPanel HorizontalAlignment="Center">
             <Label Content="Check" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="42" HorizontalContentAlignment="Center"></Label>
@@ -17,7 +35,12 @@
                 </StackPanel>
                 <StackPanel Width="400">
                     <Label Content="Your order:" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="32"></Label>
-                    <ListBox Name="Cakes"  Background="Transparent"></ListBox>
+                    <ScrollViewer MaxHeight="200">
+                        <ListBox BorderThickness="0" Background="Transparent" Margin="20,0,20,0" x:Name="CakeList" ItemTemplate="{StaticResource CakeTempalte}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ItemsPanel="{StaticResource test1}"/>
+                    </ScrollViewer>
+                    <Label Name="Total"  Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="32"></Label>
                 </StackPanel>
             </StackPanel>
 

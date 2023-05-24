@@ -48,7 +48,7 @@
             <StackPanel Orientation="Horizontal" Width="400px">
                 <Label Name="username" Content="username" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="30" Width="auto" Height="44" Margin="20,0,0,0" VerticalAlignment="Center" />
                 <Label Name="Total" Content="Total: " Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="30" Width="auto" Height="44" Margin="20,0,0,0" VerticalAlignment="Center" />
-                <Button Name="Buy" Content="Confirm" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="90" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave"/>
+                <Button Name="Buy" Content="Confirm" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="90" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="Confirm"/>
             </StackPanel>
         </StackPanel>
         <ScrollViewer Grid.Row="1">
