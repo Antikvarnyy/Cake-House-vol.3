@@ -20,6 +20,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <DataTemplate x:Key="CakeTempalte">
+            <Border BorderBrush="#473366" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Width="1240">
+                    <Image Width="150" Height="150"  Source="{Binding Path=picture1}"/>
+                    <Rectangle Height="150" Width="1" Fill="#473366"></Rectangle>
+                    <StackPanel Width="700">
+                        <TextBlock TextWrapping="Wrap" Padding="5" FontFamily="Monotype Corsiva" FontSize="32" Text="{Binding Path=name1}" HorizontalAlignment="Left" TextAlignment="Center"/>
+                        <TextBlock TextWrapping="Wrap" Foreground="Gray" FontFamily="Monotype Corsiva" FontSize="22" Text="{Binding Path=Ingridients1}" HorizontalAlignment="Left" TextAlignment="Center"/>
+                    </StackPanel>
+                    <Rectangle Height="150" Width="1" Fill="#473366"></Rectangle>
+                    <TextBlock Width="100" TextWrapping="Wrap" Padding="5" FontFamily="Monotype Corsiva" FontSize="32" Text="{Binding Path=price1}"  HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle Height="150" Width="1" Fill="#473366"></Rectangle>
+                    <TextBlock Width="80" TextWrapping="Wrap" Padding="5" FontFamily="Monotype Corsiva" FontSize="32" Text="{Binding Path=count1}"  HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle Height="150" Width="1" Fill="#473366"></Rectangle>
+                    <Button Background="Transparent" Height="150" Width="150" Name="BuyB" Click="BuyClick" DataContext="{Binding}">
+                        <Image Source="Recources/shopping-cart.png" Margin="30"></Image>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="test1">
+            <WrapPanel/>
+        </ItemsPanelTemplate>
     </Window.Resources>
 
     <Grid>
@@ -41,5 +64,37 @@
                 <Label Name="username" Content="Log In, please" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="30" Width="auto" Height="44" Margin="0,0,10,0" VerticalAlignment="Bottom" />
             </StackPanel>
         </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Height="auto" VerticalAlignment="Top">
+                    <Image Source="Recources/Cake.png" Height="auto" Width="600" Stretch="Fill" StretchDirection="Both"></Image>
+                    <TextBlock Text="Our team of talented pastry chefs use only the highest quality ingredients to make our cakes.
+                               
+                            We also have the option to order a cake for a special occasion - we'll be happy to create a custom cake design to highlight the theme of your party or cater to your individual preferences in taste and appearance.
+                           
+                           
+                            You will be able to choose the perfect cake for your taste and needs. In addition, we also offer sugar-free cakes for those who care about their health."
+                           TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="29" Width="650">
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="#FDF5D3" Width="20" Height="50"></Rectangle>
+                    <ComboBox Name="Price" Width="200" Height="50" FontFamily="Monotype Corsiva" FontSize="34" SelectionChanged="ChangeSelection"/>
+                    <ComboBox Name="catg" Width="400" Height="50" FontFamily="Monotype Corsiva" FontSize="34" SelectionChanged="ChangeSelection"/>
+                    <ComboBox Name="Weight" Width="200" Height="50" FontFamily="Monotype Corsiva" FontSize="34" SelectionChanged="ChangeSelection"/>
+                    <TextBox Name="search" Background="#FDF5D3" Foreground="Gray" Text="Search..." Height="50" Width="445" FontFamily="Monotype Corsiva" FontSize="50" PreviewKeyDown="click"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Margin="55,0,0,0" Content="Prewiew" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+                    <Label Margin="200,0,0,0" Content="Name and description" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+                    <Label Margin="320,0,0,0" Content="Price" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+                    <Label Margin="20,0,0,0" Content="Aviable" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+                    <Label Margin="40,0,0,0" Content="Buy" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+                </StackPanel>
+                <ListBox BorderThickness="0" Background="Transparent" Margin="20,0,20,0" x:Name="CakeList" ItemTemplate="{StaticResource CakeTempalte}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ItemsPanel="{StaticResource test1}"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
