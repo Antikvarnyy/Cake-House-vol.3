@@ -55,12 +55,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Basket.xaml.cs">
+      <DependentUpon>Basket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Check.xaml.cs">
+      <DependentUpon>Check.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryPay.xaml.cs">
+      <DependentUpon>DeliveryPay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="Singer.xaml.cs">
       <DependentUpon>Singer.xaml</DependentUpon>
     </Compile>
+    <Page Include="Basket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Check.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeliveryPay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

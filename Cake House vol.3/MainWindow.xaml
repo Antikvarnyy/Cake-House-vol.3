@@ -58,7 +58,7 @@
             <Label Content="Cake House" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="40" Width="auto" Height="60" Margin="110,0,0,0" />
             <StackPanel Orientation="Horizontal" Width="540" FlowDirection="RightToLeft">
                 <Button Name="log" Content="Log in" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="65" Height="35"  Background="#E1BD77" Margin="10,0,10,0" Click="LogClick" MouseEnter="Levitate" MouseLeave="Leave"/>
-                <Button Name="bracket" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="35" Height="35" Margin="0,0,10,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave">
+                <Button Name="bracket" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="35" Height="35" Margin="0,0,10,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="ToBasket">
                     <Image Source="Recources/shopping-cart.png" Margin="5"></Image>
                 </Button>
                 <Label Name="username" Content="Log In, please" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="30" Width="auto" Height="44" Margin="0,0,10,0" VerticalAlignment="Bottom" />

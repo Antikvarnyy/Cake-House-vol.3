@@ -1,0 +1,31 @@
+﻿<Window x:Class="Cake_House_vol._3.DeliveryPay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cake_House_vol._3"
+        mc:Ignorable="d"
+        Title="Delivery &amp; Pay" Height="250" Width="300" Background="#DECAFC">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Delivery" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="32" HorizontalContentAlignment="Center"></Label>
+            <Label Content="Enter address for deliveryman" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="22" HorizontalContentAlignment="Center" Margin="0,10,0,0"></Label>
+            <TextBox Name="address" Height="30px" Width="200px" Margin="0,0,0,40px"></TextBox>
+            <Button x:Name="confirm" Width="150px" Height="30px" Content="Payment" Foreground="#473366" Background="#E1BD77" FontFamily="Monotype Corsiva" FontSize="22" Click="pay"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

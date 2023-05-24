@@ -1,0 +1,26 @@
+﻿<Window x:Class="Cake_House_vol._3.Check"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cake_House_vol._3"
+        mc:Ignorable="d"
+        Title="Check" Height="450" Width="800"
+        Background="#DECAFC">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Check" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="42" HorizontalContentAlignment="Center"></Label>
+            <StackPanel Orientation="Horizontal" Width="800">
+                <StackPanel Width="400">
+                    <Label Content="Address:" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="32"></Label>
+                    <Label Width="auto" Height="auto" Name="addressa" Content="" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="26"></Label>
+                </StackPanel>
+                <StackPanel Width="400">
+                    <Label Content="Your order:" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="32"></Label>
+                    <ListBox Name="Cakes"  Background="Transparent"></ListBox>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

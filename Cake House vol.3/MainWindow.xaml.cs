@@ -329,5 +329,21 @@ namespace Cake_House_vol._3
                 int num = await commandcat.ExecuteNonQueryAsync();
             }
         }
+
+        private void ToBasket(object sender, RoutedEventArgs e)
+        {
+            if (log.Content == "Log out" || log.Content == "CakeHouse") { }
+            else
+            {
+                LogClick(sender, e);
+                return;
+            }
+            Basket basket = new Basket(username.Content.ToString());
+            basket.Owner = this;
+            basket.Name = username.Content.ToString();
+            Hide();
+            basket.ShowDialog();
+            Show();
+        }
     }
 }
