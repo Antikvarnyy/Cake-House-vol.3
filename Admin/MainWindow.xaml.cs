@@ -73,7 +73,10 @@ namespace Admin
 
         private void DelCake(object sender, RoutedEventArgs e)
         {
-
+            EditCakeWindow ecw = new EditCakeWindow();
+            Hide();
+            ecw.ShowDialog();
+            Show();
         }
 
         private void DelOrder(object sender, RoutedEventArgs e)
