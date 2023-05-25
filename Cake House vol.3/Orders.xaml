@@ -30,7 +30,7 @@
             <TextBox x:Name="email" Width="250" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="24"></TextBox>
             <Label Margin="15,15,15,0" Content="Describe your order" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="28" HorizontalContentAlignment="Center"></Label>
             <TextBox x:Name="details" Width="250" Height="150" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="21" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"></TextBox>
-            <Button x:Name="confirm" Margin="25" Width="150px" Height="30px" Content="Confirm" Foreground="#473366" Background="#E1BD77" FontFamily="Monotype Corsiva" FontSize="22" Click="conf"></Button>
+            <Button x:Name="confirm" Margin="25" Width="150px" Height="30px" Content="Confirm" Foreground="#473366" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" FontFamily="Monotype Corsiva" FontSize="22" Click="conf"></Button>
 
         </StackPanel>
     </Grid>

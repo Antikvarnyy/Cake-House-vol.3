@@ -1,0 +1,33 @@
+﻿<Window x:Class="Admin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Admin"
+        mc:Ignorable="d"
+        Title="Admin Main" Height="300" Width="250"
+        Background="#DECAFC">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Admin" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="42" HorizontalContentAlignment="Center"></Label>
+            <Button x:Name="add" Margin="0,10,0,0" Width="150px" Height="30px" MouseEnter="Levitate" MouseLeave="Leave" Content="Add cake" Foreground="#473366" Background="#E1BD77" FontFamily="Monotype Corsiva" FontSize="22" Click="Addbutton"></Button>
+            <Button x:Name="deledit" Margin="0,10,0,0" Width="150px" Height="30px" MouseEnter="Levitate" MouseLeave="Leave" Content="Delete\Edit cake" Foreground="#473366" Background="#E1BD77" FontFamily="Monotype Corsiva" FontSize="22" Click="DelCake"></Button>
+            <Button x:Name="orders" Margin="0,10,0,0" Width="150px" Height="30px" MouseEnter="Levitate" MouseLeave="Leave" Content="Delete\Edit order" Foreground="#473366" Background="#E1BD77" FontFamily="Monotype Corsiva" FontSize="22" Click="DelOrder"></Button>
+            <Button x:Name="profit" Margin="0,10,0,0" Width="150px" Height="30px" MouseEnter="Levitate" MouseLeave="Leave" Content="Profit" Foreground="#473366" Background="#E1BD77" FontFamily="Monotype Corsiva" FontSize="22" Click="Check"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
