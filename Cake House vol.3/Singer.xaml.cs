@@ -86,7 +86,7 @@ namespace Cake_House_vol._3
                         SqlCommand commandcat = new SqlCommand(enteruser, connectioncat);
                         int num = await commandcat.ExecuteNonQueryAsync();
                     }
-                    MessageBox.Show("Success!")
+                    MessageBox.Show("Success!");
                     Close();
                 }
             }

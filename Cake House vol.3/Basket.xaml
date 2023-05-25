@@ -1,0 +1,60 @@
+﻿<Window x:Class="Cake_House_vol._3.Basket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cake_House_vol._3"
+        mc:Ignorable="d"
+        Title="Basket" Height="400" Width="550"
+        Background="#DECAFC">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="CakeTempalte">
+            <Border BorderBrush="#473366" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Width="500">
+                    <Image Width="75" Height="75"  Source="{Binding Path=picture1}"/>
+                    <Rectangle Height="75" Width="1" Fill="#473366"></Rectangle>
+                    <TextBlock TextWrapping="Wrap" Width="150px" Padding="5" FontFamily="Monotype Corsiva" FontSize="22" Text="{Binding Path=name1}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                    <Rectangle Height="75" Width="1" Fill="#473366"></Rectangle>
+                    <TextBlock Width="50" TextWrapping="Wrap" Padding="5" FontFamily="Monotype Corsiva" FontSize="22" Text="{Binding Path=price1}"  HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <Rectangle Height="75" Width="1" Fill="#473366"></Rectangle>
+                    <ComboBox SelectedIndex="{Binding Path=selection1}" Name="count" Margin="10" FontFamily="Monotype Corsiva" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Path=count1}" SelectionChanged="CountChange"></ComboBox>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="test1">
+            <WrapPanel/>
+        </ItemsPanelTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#473366" Width="1280" Height="60"></Rectangle>
+        <StackPanel Orientation="Horizontal" >
+            <Button Name="back" Content="&lt;-- Back" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="90" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="exit"/>
+            <StackPanel Orientation="Horizontal" Width="400px">
+                <Label Name="username" Content="username" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="30" Width="auto" Height="44" Margin="20,0,0,0" VerticalAlignment="Center" />
+                <Label Name="Total" Content="Total: " Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="30" Width="auto" Height="44" Margin="20,0,0,0" VerticalAlignment="Center" />
+                <Button Name="Buy" Content="Confirm" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="90" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="Confirm"/>
+            </StackPanel>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <ListBox BorderThickness="0" Background="Transparent" Margin="20,0,20,0" x:Name="CakeList" ItemTemplate="{StaticResource CakeTempalte}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ItemsPanel="{StaticResource test1}"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
