@@ -89,7 +89,10 @@ namespace Admin
 
         private void Check(object sender, RoutedEventArgs e)
         {
-
+            ProfitWindow profit = new ProfitWindow();
+            Hide();
+            profit.ShowDialog();
+            Show();
         }
     }
 }

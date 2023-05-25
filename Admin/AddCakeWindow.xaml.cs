@@ -31,7 +31,7 @@ namespace Admin
         private void picload(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Images (*.png)|*.png|(*.jpeg)|*.jpeg";
+            openFileDialog.Filter = "Images (*.png)|*.png|(*.jpeg)|*.jpeg|(*.jpg)|*.jpg";
             if (openFileDialog.ShowDialog() != true)
                 return;
             string path = openFileDialog.FileName;
@@ -169,6 +169,7 @@ namespace Admin
                     }
                 }
             }
+            Close();
         }
     }
 }

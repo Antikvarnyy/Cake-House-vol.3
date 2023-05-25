@@ -208,9 +208,9 @@ namespace Cake_House_vol._3
                         }
                     }
                     reader.Close();
-                }
-                CakeList.ItemsSource = Cakes;
+                }                
             }
+            CakeList.ItemsSource = Cakes;
         }
 
         private void Levitate(object sender, MouseEventArgs e)

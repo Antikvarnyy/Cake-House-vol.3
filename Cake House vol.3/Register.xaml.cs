@@ -103,7 +103,10 @@ namespace Cake_House_vol._3
                     }
                     reader.Close();
                 }
-
+                else
+                {
+                    MessageBox.Show("Wrong login");
+                }
             }
         }
         private void Singing(object sender, RoutedEventArgs e)

@@ -63,7 +63,7 @@ namespace Admin
                     return;
             }
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Images (*.png)|*.png|(*.jpeg)|*.jpeg";
+            openFileDialog.Filter = "Images (*.png)|*.png|(*.jpeg)|*.jpeg|(*.jpg)|*.jpg";
             if (openFileDialog.ShowDialog() != true)
                 return;
             string path = openFileDialog.FileName;
