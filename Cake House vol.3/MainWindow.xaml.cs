@@ -359,6 +359,12 @@ namespace Cake_House_vol._3
 
         private void GoOrders(object sender, RoutedEventArgs e)
         {
+            if (log.Content == "Log out" || log.Content == "CakeHouse") { }
+            else
+            {
+                LogClick(sender, e);
+                return;
+            }
             Orders orders = new Orders(username.Content.ToString());
             orders.Owner = this;
             Hide();

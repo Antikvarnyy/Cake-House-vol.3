@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +28,31 @@ namespace Cake_House_vol._3
             user = username;
 
             data.DisplayDateStart = DateTime.Now.AddDays(1);
-            DateTime dt = DateTime.Parse("27.05.2023");
-            data.DisplayDate.Subtract(dt);
+            filling();
+        }
+
+        private async void filling()
+        {
+            string connectionString = @"Data Source = USER-PC50; Initial Catalog = CakeHouse; Trusted_Connection=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+                string selcustom = "SELECT * FROM Orders";
+                SqlCommand command = new SqlCommand(selcustom, connection);
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+                if (reader.HasRows)
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        object orderdate = reader.GetValue(2);
+
+                        DateTime dateToRemove = DateTime.ParseExact(orderdate.ToString(), "dd.MM.yyyy", CultureInfo.InvariantCulture);
+
+                        data.BlackoutDates.Add(new CalendarDateRange(dateToRemove));
+                    }
+                }
+            }
+
         }
 
         private async void conf(object sender, RoutedEventArgs e)
