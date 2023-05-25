@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,7 +57,7 @@ namespace Cake_House_vol._3
             public int id1 { get; set; }
             public string name1 { get; set; }
             public string category1 { get; set; }
-            public string picture1 { get; set; }
+            public BitmapImage picture1 { get; set; }
             public int weight1 { get; set; }
             public string Ingridients1 { get; set; }
             public int[] count1 { get; set; }
@@ -131,18 +132,47 @@ namespace Cake_House_vol._3
                                                         {
                                                             count[i] = i;
                                                         }
-                                                        Cakes.Add(new CakeClass()
+                                                        try
                                                         {
-                                                            id1 = Convert.ToInt32(id_cake),
-                                                            name1 = name_cake.ToString(),
-                                                            category1 = category_cake.ToString(),
-                                                            picture1 = picture_cake.ToString(),
-                                                            weight1 = Convert.ToInt32(weight_cake),
-                                                            count1 = count,
-                                                            Ingridients1 = ingridients_cake.ToString(),
-                                                            price1 = Convert.ToInt32(price_cake) * Convert.ToInt32(count_basket),
-                                                            selection1 = Convert.ToInt32(count_basket)
-                                                        });
+                                                            byte[] imageData = (byte[])picture_cake;
+                                                            BitmapImage bitmapImage = new BitmapImage();
+                                                            using (MemoryStream memoryStream = new MemoryStream(imageData))
+                                                            {
+                                                                bitmapImage.BeginInit();
+                                                                bitmapImage.CacheOption = BitmapCacheOption.OnLoad; // Установка режима кэширования изображения
+                                                                bitmapImage.StreamSource = memoryStream;
+                                                                bitmapImage.EndInit();
+                                                            }
+
+                                                            Cakes.Add(new CakeClass()
+                                                            {
+                                                                id1 = Convert.ToInt32(id_cake),
+                                                                name1 = name_cake.ToString(),
+                                                                category1 = category_cake.ToString(),
+                                                                picture1 = bitmapImage,
+                                                                weight1 = Convert.ToInt32(weight_cake),
+                                                                Ingridients1 = ingridients_cake.ToString(),
+                                                                count1 = count,
+                                                                price1 = Convert.ToInt32(price_cake),
+                                                                selection1 = Convert.ToInt32(count_basket)
+                                                            });
+
+                                                        }
+                                                        catch (Exception ex)
+                                                        {
+                                                            Cakes.Add(new CakeClass()
+                                                            {
+                                                                id1 = Convert.ToInt32(id_cake),
+                                                                name1 = name_cake.ToString(),
+                                                                category1 = category_cake.ToString(),
+                                                                weight1 = Convert.ToInt32(weight_cake),
+                                                                Ingridients1 = ingridients_cake.ToString(),
+                                                                count1 = count,
+                                                                price1 = Convert.ToInt32(price_cake),
+                                                                selection1 = Convert.ToInt32(count_basket)
+
+                                                            });
+                                                        }
                                                         total += Convert.ToInt32(price_cake) * Convert.ToInt32(count_basket);
                                                     }
                                                 }

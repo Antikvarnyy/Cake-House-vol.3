@@ -65,7 +65,10 @@ namespace Admin
 
         private void Addbutton(object sender, RoutedEventArgs e)
         {
-
+            AddCakeWindow acw = new AddCakeWindow();
+            Hide();
+            acw.ShowDialog();
+            Show();
         }
 
         private void DelCake(object sender, RoutedEventArgs e)

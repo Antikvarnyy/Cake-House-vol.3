@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,7 +76,7 @@ namespace Cake_House_vol._3
             public int id1 { get; set; }
             public string name1 { get; set; }
             public string category1 { get; set; }
-            public string picture1 { get; set; }
+            public BitmapImage picture1 { get; set; }
             public int weight1 { get; set; }
             public string Ingridients1 { get; set; }
             public int count1 { get; set; }
@@ -107,6 +108,8 @@ namespace Cake_House_vol._3
                         object ingridients = reader.GetValue(5);
                         object count = reader.GetValue(6);
                         object price = reader.GetValue(7);
+
+                        #region check
                         if (Price.SelectedIndex == 1 && Convert.ToInt32(price) > 100)
                             continue;
                         if (Price.SelectedIndex == 2 && (Convert.ToInt32(price) < 100 || Convert.ToInt32(price) > 499))
@@ -163,19 +166,46 @@ namespace Cake_House_vol._3
                             if (!name.ToString().ToLower().Contains(search.Text.ToLower()) && search.Text.Length > 0)
                                 continue;
                         }
+                        #endregion
 
-
-                        Cakes.Add(new CakeClass()
+                        try
                         {
-                            id1 = Convert.ToInt32(id),
-                            name1 = name.ToString(),
-                            category1 = category.ToString(),
-                            picture1 = picture.ToString(),
-                            weight1 = Convert.ToInt32(weight),
-                            Ingridients1 = ingridients.ToString(),
-                            count1 = Convert.ToInt32(count),
-                            price1 = Convert.ToInt32(price)
-                        });
+                            byte[] imageData = (byte[])picture;
+                            BitmapImage bitmapImage = new BitmapImage();
+                            using (MemoryStream memoryStream = new MemoryStream(imageData))
+                            {
+                                bitmapImage.BeginInit();
+                                bitmapImage.CacheOption = BitmapCacheOption.OnLoad; // Установка режима кэширования изображения
+                                bitmapImage.StreamSource = memoryStream;
+                                bitmapImage.EndInit();
+                            }
+
+                            Cakes.Add(new CakeClass()
+                            {
+                                id1 = Convert.ToInt32(id),
+                                name1 = name.ToString(),
+                                category1 = category.ToString(),
+                                picture1 = bitmapImage,
+                                weight1 = Convert.ToInt32(weight),
+                                Ingridients1 = ingridients.ToString(),
+                                count1 = Convert.ToInt32(count),
+                                price1 = Convert.ToInt32(price)
+                            });
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Cakes.Add(new CakeClass()
+                            {
+                                id1 = Convert.ToInt32(id),
+                                name1 = name.ToString(),
+                                category1 = category.ToString(),
+                                weight1 = Convert.ToInt32(weight),
+                                Ingridients1 = ingridients.ToString(),
+                                count1 = Convert.ToInt32(count),
+                                price1 = Convert.ToInt32(price)
+                            });
+                        }
                     }
                     reader.Close();
                 }
