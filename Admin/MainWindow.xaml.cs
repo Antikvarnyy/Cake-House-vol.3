@@ -81,7 +81,10 @@ namespace Admin
 
         private void DelOrder(object sender, RoutedEventArgs e)
         {
-
+            EditOrderWindow eow = new EditOrderWindow();
+            Hide();
+            eow.ShowDialog();
+            Show();
         }
 
         private void Check(object sender, RoutedEventArgs e)
