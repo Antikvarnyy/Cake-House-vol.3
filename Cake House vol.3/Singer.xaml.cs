@@ -89,6 +89,18 @@ namespace Cake_House_vol._3
                     MessageBox.Show("Success!");
                     Close();
                 }
+                else
+                {
+                    string enteruser = $"INSERT INTO customers VALUES('{login.Text}','{pass.Password}',0)";
+                    using (SqlConnection connectioncat = new SqlConnection(connectionString))
+                    {
+                        await connectioncat.OpenAsync();
+                        SqlCommand commandcat = new SqlCommand(enteruser, connectioncat);
+                        int num = await commandcat.ExecuteNonQueryAsync();
+                    }
+                    MessageBox.Show("Success!");
+                    Close();
+                }
             }
         }
     }

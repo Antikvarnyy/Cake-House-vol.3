@@ -41,7 +41,7 @@
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 ItemsPanel="{StaticResource test1}"/>
             </ScrollViewer>
-            <Button IsEnabled="False" Name="leave" Background="#E1BD77" Foreground="#473366" Width="150" FontFamily="Monotype Corsiva" FontSize="22" Height="40" Content="Leave Rewiew" Click="LeaveRew"></Button>
+            <Button IsEnabled="False" Name="leave" Background="#E1BD77" Foreground="#473366" Width="150" FontFamily="Monotype Corsiva" MouseEnter="Levitate" MouseLeave="Leave" FontSize="22" Height="40" Content="Leave Rewiew" Click="LeaveRew"></Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="Admin.AddCakeWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Admin"
+    mc:Ignorable="d"
+    Title="AddCakeWindow" Height="750" Width="400" Background="#DECAFC">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Addition:" FontFamily="Monotype Corsiva" FontSize="32"></Label>
+            <Label Content="Name:" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <TextBox Name="nameadd" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></TextBox>
+            <Label Content="Category:" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <TextBox Name="catadd" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></TextBox>
+            <Label Content="Weight:" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <TextBox Name="weightadd" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></TextBox>
+            <Label Content="Count:" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <TextBox Name="countadd" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></TextBox>
+            <Label Content="Ingridients:" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <TextBox Name="ingradd" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></TextBox>
+            <Label Content="Price:" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <TextBox Name="priceadd" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></TextBox>
+            <Label Content="Picture:" FontFamily="Monotype Corsiva" FontSize="28" Width="300"></Label>
+            <Button Background="#FDF5D3" FontFamily="Monotype Corsiva" FontSize="28" Content="Upload" Width="300" Click="picload"></Button>
+            <Label Name="picpath" Content="" FontFamily="Monotype Corsiva" FontSize="28"></Label>
+            <Button Background="#FDF5D3" FontFamily="Monotype Corsiva" FontSize="28" Content="Create" FontWeight="Bold" Width="300" Margin="0,26,0,0" Click="Createbutton"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

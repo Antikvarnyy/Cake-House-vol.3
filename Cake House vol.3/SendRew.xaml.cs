@@ -26,6 +26,14 @@ namespace Cake_House_vol._3
             InitializeComponent();
             username = user;
         }
+        private void Levitate(object sender, MouseEventArgs e)
+        {
+            leave.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FDF5D3"));
+        }
+        private void Leave(object sender, MouseEventArgs e)
+        {
+            leave.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E1BD77"));
+        }
 
         private async void LeaveRew(object sender, RoutedEventArgs e)
         {

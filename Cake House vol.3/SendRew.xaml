@@ -36,7 +36,7 @@
         <StackPanel HorizontalAlignment="Center">
             <Label Content="Leave your review" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="42" HorizontalContentAlignment="Center"></Label>
             <TextBox Name="rew" Height="200px" Width="300" FontSize="26" TextWrapping="Wrap" FontFamily="Monotype Corsiva" Foreground="#473366"></TextBox>
-            <Button Name="leave" Background="#E1BD77" Foreground="#473366" Width="200" FontFamily="Monotype Corsiva" FontSize="22" Height="40" Content="Leave Rewiew" Margin="15" Click="LeaveRew"></Button>
+            <Button Name="leave" Background="#E1BD77" Foreground="#473366" MouseEnter="Levitate" MouseLeave="Leave" Width="200" FontFamily="Monotype Corsiva" FontSize="22" Height="40" Content="Leave Rewiew" Margin="15" Click="LeaveRew"></Button>
         </StackPanel>
     </Grid>
 </Window>

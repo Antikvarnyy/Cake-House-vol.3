@@ -23,7 +23,7 @@
         <DataTemplate x:Key="CakeTempalte">
             <Border BorderBrush="#473366" BorderThickness="1">
                 <StackPanel Orientation="Horizontal" Width="1240">
-                    <Image Width="150" Height="150"  Source="{Binding Path=picture1}"/>
+                    <Image Width="150" Height="150"  Source="{Binding picture1}"/>
                     <Rectangle Height="150" Width="1" Fill="#473366"></Rectangle>
                     <StackPanel Width="700">
                         <TextBlock TextWrapping="Wrap" Padding="5" FontFamily="Monotype Corsiva" FontSize="32" Text="{Binding Path=name1}" HorizontalAlignment="Left" TextAlignment="Center"/>

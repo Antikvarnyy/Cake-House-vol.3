@@ -55,9 +55,25 @@ namespace Cake_House_vol._3
 
         }
 
+        private void Levitate(object sender, MouseEventArgs e)
+        {
+
+            confirm.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FDF5D3"));
+
+        }
+        private void Leave(object sender, MouseEventArgs e)
+        {
+            confirm.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E1BD77"));
+        }
+
         private async void conf(object sender, RoutedEventArgs e)
         {
-            if(email.Text == "")
+            if(data.Text == "")
+            {
+                MessageBox.Show("Choise a date for your order", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            if (email.Text == "")
             {
                 MessageBox.Show("Leave your e-mail so that our specialist can contact you to clarify and confirm the order", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
