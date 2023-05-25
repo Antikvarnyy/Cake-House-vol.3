@@ -1,12 +1,12 @@
-﻿<Window x:Class="Cake_House_vol._3.Reviews"
+﻿<Window x:Class="Cake_House_vol._3.SendRew"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cake_House_vol._3"
         mc:Ignorable="d"
-        Title="Reviews" Height="450" Width="800"
-         Background="#DECAFC">
+        Title="Send Rewiew" Height="380" Width="500"
+        Background="#DECAFC">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">
@@ -34,14 +34,9 @@
     </Window.Resources>
     <Grid>
         <StackPanel HorizontalAlignment="Center">
-            <Label Content="Our reviews" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="42" HorizontalContentAlignment="Center"></Label>
-            <Rectangle Fill="#473366" Height="2" Width="170"></Rectangle>
-            <ScrollViewer Grid.Row="1" MaxHeight="300">
-                <ListBox BorderThickness="0" Background="Transparent" Margin="20,0,20,0" x:Name="RewList" ItemTemplate="{StaticResource CakeTempalte}"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                ItemsPanel="{StaticResource test1}"/>
-            </ScrollViewer>
-            <Button IsEnabled="False" Name="leave" Background="#E1BD77" Foreground="#473366" Width="150" FontFamily="Monotype Corsiva" FontSize="22" Height="40" Content="Leave Rewiew" Click="LeaveRew"></Button>
+            <Label Content="Leave your review" Foreground="#473366" FontFamily="Monotype Corsiva" FontSize="42" HorizontalContentAlignment="Center"></Label>
+            <TextBox Name="rew" Height="200px" Width="300" FontSize="26" TextWrapping="Wrap" FontFamily="Monotype Corsiva" Foreground="#473366"></TextBox>
+            <Button Name="leave" Background="#E1BD77" Foreground="#473366" Width="200" FontFamily="Monotype Corsiva" FontSize="22" Height="40" Content="Leave Rewiew" Margin="15" Click="LeaveRew"></Button>
         </StackPanel>
     </Grid>
 </Window>

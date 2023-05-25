@@ -345,6 +345,7 @@ namespace Cake_House_vol._3
             Hide();
             basket.ShowDialog();
             Show();
+            filling();
         }
 
         private void GoReviews(object sender, RoutedEventArgs e)
@@ -353,6 +354,15 @@ namespace Cake_House_vol._3
             rew.Owner = this;
             Hide();
             rew.ShowDialog();
+            Show();
+        }
+
+        private void GoOrders(object sender, RoutedEventArgs e)
+        {
+            Orders orders = new Orders(username.Content.ToString());
+            orders.Owner = this;
+            Hide();
+            orders.ShowDialog();
             Show();
         }
     }

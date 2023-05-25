@@ -94,7 +94,12 @@ namespace Cake_House_vol._3
 
         private void LeaveRew(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hello");
+            SendRew sr = new SendRew(user);
+            sr.Owner = this;
+            Hide();
+            sr.ShowDialog();
+            Show();
+            filling();
         }
     }
 }

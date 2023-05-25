@@ -54,7 +54,7 @@
         <StackPanel Orientation="Horizontal">
             <Button Name="about" Content="About us" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="90" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave"/>
             <Button Name="reviews" Content="Our reviews" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="150" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="GoReviews"/>
-            <Button Name="order" Content="Order for a date" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="170" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave"/>
+            <Button Name="order" Content="Order for a date" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="170" Height="35" Margin="10,0,0,0" Background="#E1BD77" MouseEnter="Levitate" MouseLeave="Leave" Click="GoOrders"/>
             <Label Content="Cake House" Foreground="#E1BD77" FontFamily="Monotype Corsiva" FontSize="40" Width="auto" Height="60" Margin="110,0,0,0" />
             <StackPanel Orientation="Horizontal" Width="540" FlowDirection="RightToLeft">
                 <Button Name="log" Content="Log in" Foreground="Black" FontFamily="Monotype Corsiva" FontSize="22" Width="65" Height="35"  Background="#E1BD77" Margin="10,0,10,0" Click="LogClick" MouseEnter="Levitate" MouseLeave="Leave"/>
@@ -68,13 +68,13 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Height="auto" VerticalAlignment="Top">
                     <Image Source="Recources/Cake.png" Height="auto" Width="600" Stretch="Fill" StretchDirection="Both"></Image>
-                    <TextBlock Text="Our team of talented pastry chefs use only the highest quality ingredients to make our cakes.
+                    <TextBlock VerticalAlignment="Center" Padding="25" Text="Our team of talented pastry chefs use only the highest quality ingredients to make our cakes.
                                
                             We also have the option to order a cake for a special occasion - we'll be happy to create a custom cake design to highlight the theme of your party or cater to your individual preferences in taste and appearance.
                            
                            
                             You will be able to choose the perfect cake for your taste and needs. In addition, we also offer sugar-free cakes for those who care about their health."
-                           TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="29" Width="650">
+                           TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="32" Width="650">
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
