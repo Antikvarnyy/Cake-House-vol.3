@@ -371,5 +371,13 @@ namespace Cake_House_vol._3
             orders.ShowDialog();
             Show();
         }
+
+        private void Ass(object sender, RoutedEventArgs e)
+        {
+            AboutUs ass = new AboutUs();
+            Hide();
+            ass.ShowDialog();
+            Show();
+        }
     }
 }

@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutUs.xaml.cs">
+      <DependentUpon>AboutUs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Basket.xaml.cs">
       <DependentUpon>Basket.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
     <Compile Include="Singer.xaml.cs">
       <DependentUpon>Singer.xaml</DependentUpon>
     </Compile>
+    <Page Include="AboutUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Basket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recources\Cake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recources\Konditer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
